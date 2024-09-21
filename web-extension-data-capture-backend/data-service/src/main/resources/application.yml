@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: DATA-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/web-extension-data-service
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
