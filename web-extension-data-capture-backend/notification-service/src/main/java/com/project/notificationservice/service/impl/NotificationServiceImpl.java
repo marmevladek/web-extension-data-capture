@@ -1,6 +1,6 @@
 package com.project.notificationservice.service.impl;
 
-import com.project.notificationservice.dto.MessageDto;
+import com.project.notificationservice.dto.DataDto;
 import com.project.notificationservice.service.NotificationService;
 import com.project.notificationservice.service.bot.TelegramBotService;
 import lombok.RequiredArgsConstructor;
@@ -15,5 +15,10 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public void sendMessage() {
         telegramBotService.sendMessage(1397544955, "Hello world!");
+    }
+
+    @Override
+    public void sendData(DataDto dataDto) {
+        telegramBotService.sendMessage(1397544955, dataDto.getData());
     }
 }

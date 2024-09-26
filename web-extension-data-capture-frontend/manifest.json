@@ -1,18 +1,21 @@
 {
-    "manifest_version": 3,
-    "name": "Spring Backend Extension",
-    "version": "1.0",
-    "description": "Chrome extension with Java Spring backend",
-    "action": {
-      "default_popup": "popup.html"
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "permissions": [
-      "storage",
-      "activeTab",
-      "scripting"
-    ]
+  "manifest_version": 3,
+  "name": "Wikipedia Data Collector",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://ru.wikipedia.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Wikipedia Data Collector"
   }
-  
+}
