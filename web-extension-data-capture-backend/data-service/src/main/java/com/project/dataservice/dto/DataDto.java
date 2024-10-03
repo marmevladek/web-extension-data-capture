@@ -1,27 +1,18 @@
-package com.project.dataservice.model;
+package com.project.dataservice.dto;
 
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "history")
 @Getter
 @Setter
 @NoArgsConstructor
-public class HistoryGames {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "result")
+@AllArgsConstructor
+public class DataDto {
     private float result;
 
-    @Column(name = "number_of_passes_two")
     private int numberOfPassesTwo;
 
     private int numberOfPassesThree;
@@ -58,11 +49,6 @@ public class HistoryGames {
 
     private int numberOfPassesOneHundred;
 
-    private LocalDateTime fellOutAt;
-
-    @PrePersist
-    private void init() {
-        fellOutAt = LocalDateTime.now();
-    }
+    private int numberOfPassesThousand;
 
 }
